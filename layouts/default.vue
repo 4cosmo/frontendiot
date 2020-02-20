@@ -130,7 +130,7 @@ export default {
     },
     async clickLogin() {
       if (this.userLogin.username != "") {
-        let res = await axios.get('http://127.0.0.1:8888/api/register');
+        let res = await axios.get('http://172.31.22.21:8888/api/register');
         this.$store.commit('loadUser', res.data.user);
         var i;
         for (i = 0; i < this.$store.state.userALL.length; i++) {
