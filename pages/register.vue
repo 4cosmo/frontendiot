@@ -78,7 +78,7 @@ export default {
                 if (this.userR.Password.length > 5 && this.userR.Password.length <= 20) {
                     if (this.userR.Yname.length > 5 && this.userR.Yname.length <= 20  ) {
                         if (this.userR.Password == this.CPassword) {
-                            let res = await axios.post('http://172.31.22.21:8888/api/register', {
+                            let res = await axios.post('http://54.169.13.157:8888/api/register', {
                                 	username: this.userR.Username,
 	                                password: this.userR.Password,
 	                                yname: this.userR.Yname           
