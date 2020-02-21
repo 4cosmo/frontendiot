@@ -95,7 +95,7 @@
       </div>
       <div v-show="this.$store.state.onLogin == true" class="text-center">
         <br>
-        <img src="https://image.dek-d.com/25/2863649/108348881" width="150px">
+        <img src="/10.jpg" width="150px">
         <p>สวัสดีคุณ {{this.$store.state.userALL[this.$store.state.iduserLogin].yname}}</p>
         <v-btn depressed small color="error" @click="clickLogout">Logout</v-btn>
       </div>

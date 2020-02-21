@@ -11,6 +11,7 @@
     >
       <div class="text-center">
       </div>
+      <v-col cols="12" sm="15" md="30">
       <v-card>
         <v-card-title class="headline">
           ยินดีต้อนรับ
@@ -23,7 +24,7 @@
           <p>
             เข้าสู่ระบบที่ขวามือบน หากยังไม่ได้เป็นสมาชิกกด <nuxt-link to="/register">Register</nuxt-link>.
           </p>
-          <img src="https://europe.hughes.com/sites/europe.hughes.com/files/IOT.png" alt="">
+          <v-img src="https://europe.hughes.com/sites/europe.hughes.com/files/IOT.png"></v-img>
           <p>image source: <a href="https://europe.hughes.com/sites/europe.hughes.com/files/IOT.png">https://europe.hughes.com/sites/europe.hughes.com/files/IOT.png</a></p>
           <div class="text-xs-right">
             <em><small>&mdash; 4Cusmo</small></em>
@@ -34,6 +35,7 @@
           <v-spacer />
         </v-card-actions>
       </v-card>
+      </v-col>
     </v-flex>
   </v-layout>
 </template>
