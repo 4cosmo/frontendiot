@@ -22,6 +22,8 @@
       <v-list-item-content>
         <div class="overline mb-4">OVERLINE</div>
         <v-list-item-title class="headline mb-1">Node No.1</v-list-item-title>
+        <div class="overline mb-2">DATE {{n1r.date.split(".")[0].split("T")[0]}}</div>
+        <div class="overline mb-2">TIME {{n1r.date.split(".")[0].split("T")[1]}}</div>
       </v-list-item-content>
 
       <v-list-item-avatar
@@ -32,8 +34,8 @@
     </v-list-item>
 
     <v-card-actions>
-      <v-btn text class="red">Temperature <br> {{n1r.temp}}</v-btn>
-      <v-btn text class="blue">Humidity <br> {{n1r.humit}}</v-btn>
+      <v-btn text class="red"><v-icon > mdi-thermometer-lines </v-icon>Temperature <br> {{n1r.temp}} <v-icon small> mdi-temperature-celsius </v-icon></v-btn>
+      <v-btn text class="blue"><v-icon > mdi-water </v-icon>Humidity <br> {{n1r.humit}} <v-icon small> mdi-percent </v-icon></v-btn>
     </v-card-actions>
       </v-card>
       <br>
@@ -46,6 +48,8 @@
       <v-list-item-content>
         <div class="overline mb-4">OVERLINE</div>
         <v-list-item-title class="headline mb-1">Node No.2</v-list-item-title>
+        <div class="overline mb-2">DATE {{n2r.date.split(".")[0].split("T")[0]}}</div>
+        <div class="overline mb-2">TIME {{n2r.date.split(".")[0].split("T")[1]}}</div>
       </v-list-item-content>
 
       <v-list-item-avatar
@@ -56,8 +60,8 @@
     </v-list-item>
 
     <v-card-actions>
-      <v-btn text class="red">Temperature <br> {{n2r.temp}}</v-btn>
-      <v-btn text class="blue">Humidity <br> {{n2r.humit}}</v-btn>
+      <v-btn text class="red"><v-icon > mdi-thermometer-lines </v-icon>Temperature <br> {{n2r.temp}} <v-icon small> mdi-temperature-celsius </v-icon></v-btn>
+      <v-btn text class="blue"><v-icon > mdi-water </v-icon>Humidity <br> {{n2r.humit}} <v-icon small> mdi-percent </v-icon></v-btn>
     </v-card-actions>
       </v-card>
       <br>
@@ -70,6 +74,8 @@
       <v-list-item-content>
         <div class="overline mb-4">OVERLINE</div>
         <v-list-item-title class="headline mb-1">Node No.3</v-list-item-title>
+        <div class="overline mb-2">DATE {{n3r.date.split(".")[0].split("T")[0]}}</div>
+        <div class="overline mb-2">TIME {{n3r.date.split(".")[0].split("T")[1]}}</div>
         
       </v-list-item-content>
 
@@ -81,8 +87,8 @@
     </v-list-item>
 
     <v-card-actions>
-      <v-btn text class="red">Temperature <br> {{n3r.temp}}</v-btn>
-      <v-btn text class="blue">Humidity <br> {{n3r.humit}}</v-btn>
+      <v-btn text class="red"><v-icon > mdi-thermometer-lines </v-icon>Temperature <br> {{n3r.temp}} <v-icon small> mdi-temperature-celsius </v-icon></v-btn>
+      <v-btn text class="blue"><v-icon > mdi-water </v-icon> Humidity <br> {{n3r.humit}} <v-icon small> mdi-percent </v-icon></v-btn>
     </v-card-actions>
       </v-card>
       </v-col>
@@ -96,9 +102,11 @@
 import axios from 'axios'
 
 export default {
+  created() {
+    this.runTimedata();
+  },
   mounted() {
     setInterval(() => {
-      this.intervalid1++;
       this.runTimedata();
     }, 2000);
           
@@ -118,14 +126,15 @@ export default {
   },
   data() {
     return {
-      intervalid1: 0,
-      node1:[],
-      node2:[],
-      node3:[],
-      n1r: [],
-      n2r: [],
-      n3r: [],
-      iotdata:[]
+      n1r: {
+        date: "0T0.00"
+      },
+      n2r: {
+        date: "0T0.00"
+      },
+      n3r: {
+        date: "0T0.00"
+      },
     }
   },
 }

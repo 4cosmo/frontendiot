@@ -33,7 +33,8 @@
       <nuxt-link to="/">
       <img src="/Logo_ENG_small.png" height="70px">
       </nuxt-link>
-      <v-toolbar-title v-text="title" />
+      <v-toolbar-title v-text="title" class="BLACK"/>
+      <h3 class="BLACK orange--text">:InSE</h3>
       <v-spacer />
       <!-- ปุ่ม Login ขวามือบน -->
       <v-btn
@@ -96,7 +97,7 @@
       <div v-show="this.$store.state.onLogin == true" class="text-center">
         <br>
         <img src="/10.jpg" width="150px">
-        <p>สวัสดีคุณ {{this.$store.state.userALL[this.$store.state.iduserLogin].yname}}</p>
+        <p>สวัสดีคุณ {{this.$store.state.userALL.yname}}</p>
         <v-btn depressed small color="error" @click="clickLogout">Logout</v-btn>
       </div>
       <v-list>
@@ -129,35 +130,21 @@ export default {
       alert('กรุณาแจ้งผู้พัฒนาเว็บ โฟกัส InSE ปี4')
     },
     async clickLogin() {
-      if (this.userLogin.username != "") {
-        let res = await axios.get('http://54.169.13.157:8888/api/register');
+      let res = await axios.post('http://54.169.13.157:8888/api/login', {
+                                	login: this.userLogin.username,
+	                                pass: this.userLogin.password,
+                            })
+      if (res.data.ok === true) {
         this.$store.commit('loadUser', res.data.user);
-        var i;
-        for (i = 0; i < this.$store.state.userALL.length; i++) {
-          if (this.$store.state.userALL[i].username === this.userLogin.username) {
-            this.eventLogin.Cuser = true;
-            if (this.$store.state.userALL[i].password === this.userLogin.password) {
-              this.eventLogin.Cpass = true;
-              this.$store.commit('LoginUser', {"bool": true, "iduser": i});
-              alert('ยินดีต้อนรับคุณ '+ this.$store.state.userALL[i].yname);
-              this.clearUser();
-              break;
-            }
-          }
-        }
-        if (this.eventLogin.Cuser === false) {
-          alert('ไม่มี Username นี้')
-        }else if(this.eventLogin.Cpass === false){
-          alert('Password ไม่ถูกต้อง')
-        }
-      }
-      else {
-        alert('กรุณาใส่ Username')
+        this.$store.commit('LoginUser', true);
+        this.clearUser()
+      } else {
+        alert(res.data.message);
       }
 
     },
     clickLogout () {
-      this.$store.commit('LoginUser', {"bool": false, "iduser": 0});
+      this.$store.commit('LoginUser', false);
     },
     clearUser () {
       this.userLogin.username = "";
@@ -194,7 +181,7 @@ export default {
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'IoT:InSE',
+      title: 'IoT',
       userLogin: {
         username: '',
         password: ''

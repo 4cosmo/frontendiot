@@ -114,10 +114,12 @@ export default {
                         });
                         this.dataiot = res.data.student;
                     } else {
-                        alias("ใส่ค่า Humidity ไม่ถูกต้อง")
+                        alert("ใส่ค่า Humidity ไม่ถูกต้อง")
+                        this.clearH()
                     }
                 } else {
-                    alias("ใส่ค่า Temperature ไม่ถูกต้อง")
+                    alert("ใส่ค่า Temperature ไม่ถูกต้อง")
+                    this.clearT();
                 }
             } else if (this.LoT){
                 if (this.temp.minT <= this.temp.maxT) {
@@ -128,7 +130,8 @@ export default {
                     });
                     this.dataiot = res.data.student;
                 } else {
-                    alias("ใส่ค่า Temperature ไม่ถูกต้อง")
+                    alert("ใส่ค่า Temperature ไม่ถูกต้อง")
+                    this.clearT();
                 }
             } else if (this.LoH){
                 if (this.humit.minH <= this.humit.maxH) {
@@ -139,7 +142,8 @@ export default {
                     });
                     this.dataiot = res.data.student;
                 } else {
-                    alias("ใส่ค่า Humidity ไม่ถูกต้อง")
+                    alert("ใส่ค่า Humidity ไม่ถูกต้อง")
+                    this.clearH()
                 }
 
             } else {
@@ -152,6 +156,14 @@ export default {
             const wb = XLSX.utils.book_new()
             XLSX.utils.book_append_sheet(wb, dataWS)
             XLSX.writeFile(wb, 'export.xlsx')
+        },
+        clearT(){
+          this.temp.minT = 0;
+          this.temp.maxT = 0;
+        },
+        clearH(){
+          this.humit.minH = 0;
+          this.humit.maxH = 0;
         }
     },
     data() {

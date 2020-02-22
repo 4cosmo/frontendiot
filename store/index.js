@@ -10,25 +10,18 @@ export const state = () => ({
       yname: ""
     }
   ],
-  onLogin: false,
-  iduserLogin: 0
+  onLogin: false
 })
 
 export const mutations = {
   increment (state) {
     state.counter++
   },
-  rightD (state) {
-    state.rightDrawerS = !state.rightDrawerS
-    //this.rightDrawer = state.rightDrawerS
-    return state.rightDrawerS
-  },
   loadUser (state, res) {
     state.userALL = res
   },
   LoginUser (state, res) {
-    state.onLogin = res.bool;
-    state.iduserLogin = res.iduser    
+    state.onLogin = res; 
   }
 
 }
