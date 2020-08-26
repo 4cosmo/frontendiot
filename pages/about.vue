@@ -58,8 +58,8 @@
                 <h3>- Hardware Interface</h3>
                 <img src="../assets/2020-08-26_LI.jpg" width="700"/>
                 <p>โปรแกรมนี้พัฒนาด้วย WPF(Xaml) C# ทำหน้าที่ในการเชื่อมต่อ OPC DA เพื่อดึงค่าและเขียนค่าจาก PLC ที่ใช้ในโรงงานอุสาหกรรม</p>
-                <p>และ Post ค่า Counter Status Machine ที่มีการเปลี่ยนแปลง ให้ Back-End Broadcast ที่หน้าเว็บไซต์</p>
-                <p>Hardware Interface จะ get ตรวจสอบค่าที่ Back-End ว่ามีการสั่งเขียนค่าที่หรือไม่ ถ้ามีก็จะเขียนค่าลง OPC DA</p>
+                <p>และ Post ค่า Counter Machine, Status Machine ที่มีการเปลี่ยนแปลง ให้ Back-End Broadcast ที่หน้าเว็บไซต์</p>
+                <p>Hardware Interface จะ get ตรวจสอบค่าที่ Back-End ว่ามีการสั่งเขียนค่าหรือไม่ ถ้ามีก็จะเขียนค่าลง OPC DA</p>
                 <br/>
                 <h3>- Development C# .Net, MSSQL, Angular</h3>
                 <p> **กำลังใส่ข้อมูล... </p>
