@@ -130,7 +130,7 @@ export default {
       alert('กรุณาแจ้งผู้พัฒนาเว็บ โฟกัส InSE ปี4')
     },
     async clickLogin() {
-      let res = await axios.post('http://54.169.13.157:8888/api/login', {
+      let res = await axios.post('http://52.77.89.195:8888/api/login', {
                                 	login: this.userLogin.username,
 	                                pass: this.userLogin.password,
                             })

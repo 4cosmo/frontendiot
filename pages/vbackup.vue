@@ -11,7 +11,7 @@
     >
         <div v-show="this.$store.state.onLogin == false"> <h4>กรุณาเข้าสู่ระบบก่อนใช้งานหน้านี้</h4> </div>
       <div v-show="this.$store.state.onLogin == true">
-      
+
       <v-col cols="12" sm="15" md="30">
       <v-card width="730">
           <h4></h4>
@@ -105,12 +105,12 @@ export default {
             if (this.LoT && this.LoH) {
                 if (this.temp.minT <= this.temp.maxT) {
                     if (this.humit.minH <= this.humit.maxH) {
-                        let res = await axios.post('http://54.169.13.157:8888/api/iot/secth', {
+                        let res = await axios.post('http://52.77.89.195:8888/api/iot/secth', {
 	                        node: "node"+this.radioGroup,
 	                        minT: this.temp.minT,
 	                        maxT: this.temp.maxT,
 	                        minH: this.humit.minH,
-	                        maxH: this.humit.maxH        
+	                        maxH: this.humit.maxH
                         });
                         this.dataiot = res.data.student;
                     } else {
@@ -123,10 +123,10 @@ export default {
                 }
             } else if (this.LoT){
                 if (this.temp.minT <= this.temp.maxT) {
-                    let res = await axios.post('http://54.169.13.157:8888/api/iot/sect', {
+                    let res = await axios.post('http://52.77.89.195:8888/api/iot/sect', {
 	                    node: "node"+this.radioGroup,
 	                    minT: this.temp.minT,
-	                    maxT: this.temp.maxT       
+	                    maxT: this.temp.maxT
                     });
                     this.dataiot = res.data.student;
                 } else {
@@ -135,10 +135,10 @@ export default {
                 }
             } else if (this.LoH){
                 if (this.humit.minH <= this.humit.maxH) {
-                    let res = await axios.post('http://54.169.13.157:8888/api/iot/sech', {
+                    let res = await axios.post('http://52.77.89.195:8888/api/iot/sech', {
 	                    node: "node"+this.radioGroup,
 	                    minH: this.humit.minH,
-	                    maxH: this.humit.maxH        
+	                    maxH: this.humit.maxH
                     });
                     this.dataiot = res.data.student;
                 } else {
@@ -147,7 +147,7 @@ export default {
                 }
 
             } else {
-                let res = await axios.get('http://54.169.13.157:8888/api/iot/node'+this.radioGroup);
+                let res = await axios.get('http://52.77.89.195:8888/api/iot/node'+this.radioGroup);
                 this.dataiot = res.data.student;
             }
         },

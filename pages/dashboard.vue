@@ -76,7 +76,7 @@
         <v-list-item-title class="headline mb-1">Node No.3</v-list-item-title>
         <div class="overline mb-2">DATE {{n3r.date.split(".")[0].split("T")[0]}}</div>
         <div class="overline mb-2">TIME {{n3r.date.split(".")[0].split("T")[1]}}</div>
-        
+
       </v-list-item-content>
 
       <v-list-item-avatar
@@ -95,7 +95,7 @@
       </div>
     </v-flex>
   </v-layout>
-  
+
 </template>
 
 <script>
@@ -109,17 +109,17 @@ export default {
     setInterval(() => {
       this.runTimedata();
     }, 2000);
-          
+
   },
   methods: {
     async runTimedata(){
-      let resnode1 = await axios.get('http://54.169.13.157:8888/api/iot/node1');
+      let resnode1 = await axios.get('http://52.77.89.195:8888/api/iot/node1');
       //this.node1 = resnode1.data.student;
       this.n1r = resnode1.data.student[0];
-      let resnode2 = await axios.get('http://54.169.13.157:8888/api/iot/node2');
+      let resnode2 = await axios.get('http://52.77.89.195:8888/api/iot/node2');
       //this.node2 = resnode2.data.student;
       this.n2r = resnode2.data.student[0];
-      let resnode3 = await axios.get('http://54.169.13.157:8888/api/iot/node3');
+      let resnode3 = await axios.get('http://52.77.89.195:8888/api/iot/node3');
       //this.node3 = resnode3.data.student;
       this.n3r = resnode3.data.student[0];
     }
