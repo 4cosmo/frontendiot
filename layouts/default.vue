@@ -41,10 +41,10 @@
         icon
         @click.stop="rightDrawer = !rightDrawer"
       >
-        <v-icon>mdi-account-card-details</v-icon>
+        <v-icon size="45">mdi-account-circle</v-icon>
       </v-btn>
     </v-app-bar>
-    <v-content>
+    <v-content >
       <v-container>
         <nuxt />
       </v-container>
@@ -57,7 +57,7 @@
     >
       <div>
         <h3 class="text-center">
-          <v-icon>mdi-account-card-details</v-icon>
+          <v-icon>mdi-account-box</v-icon>
           Profile
           <br>
         </h3>
@@ -109,7 +109,7 @@
           </v-list-item-action>
           <v-list-item-title>Switch drawer (click me)</v-list-item-title>
         </v-list-item> -->
-      </v-list>  
+      </v-list>
     </v-navigation-drawer>
     <!-- แถบด้านล่างสุด -->
     <v-footer
