@@ -41,6 +41,7 @@
                 <p>ID: focus</p>
                 <p>Password: 123456</p>
                 <p>ID Login Web นี้</p>
+                <a href="https://github.com/4cosmo/frontendiot">Github</a>
                 <br/><br/>
                 <h2>OCR Text Comperer</h2>
                 <p>----------------</p>
