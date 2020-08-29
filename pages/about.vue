@@ -71,10 +71,10 @@
                 <div>
                   <v-carousel style="width:900px;height:auto;">
                     <v-carousel-item
-                      v-for="(item,i) in items"
+                      v-for="(item1,i) in items1"
                       :key="i"
                     >
-                    <img :src="item.src" style="width:900px;height:auto;" />
+                    <img :src="item1.src" style="width:900px;height:auto;" />
                     </v-carousel-item>
                   </v-carousel>
                 </div>
