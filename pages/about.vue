@@ -182,10 +182,10 @@
       return {
         items1: [
           {
-            src: require('../assets/oper0.PNG'),
+            src: require('../assets/oper1.PNG'),
           },
           {
-            src: require('../assets/oper1.PNG'),
+            src: require('../assets/oper0.PNG'),
           },
           {
             src: require('../assets/oper2.PNG'),
